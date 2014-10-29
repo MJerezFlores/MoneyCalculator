@@ -6,24 +6,24 @@ import java.util.Date;
 
 public class ExchangeRate {
 
-    private final Currency in;
-    private final Currency out;
+    private final Currency from;
+    private final Currency to;
     private final int value;
     private final Date date;
 
-    public ExchangeRate(Currency in, Currency out, int value, Date date) {
-        this.in = in;
-        this.out = out;
+    public ExchangeRate(Currency from, Currency to, int value, Date date) {
+        this.from = from;
+        this.to= to;
         this.value = value;
         this.date = date;
     }
 
     public Currency getIn() {
-        return in;
+        return from;
     }
 
     public Currency getOut() {
-        return out;
+        return to;
     }
 
     public int getValue() {
