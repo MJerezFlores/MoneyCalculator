@@ -8,10 +8,10 @@ public class Exchange {
     
     private final Money money;
     private final Currency[] currencyList;
-    private final int value;
+    private final double value;
     private final Date date;
 
-    public Exchange(Money money, Currency[] currencyList, int value, Date date) {
+    public Exchange(Money money, Currency[] currencyList, double value, Date date) {
         this.money = money;
         this.currencyList = currencyList;
         this.value = value;
@@ -26,7 +26,7 @@ public class Exchange {
         return currencyList;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
