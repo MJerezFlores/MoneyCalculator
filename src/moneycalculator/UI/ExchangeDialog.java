@@ -20,5 +20,9 @@ public class ExchangeDialog {
     public Exchange getExchange() {
         return exchange;
     }
+    
+    void execute(){
+        
+    }
 
 }

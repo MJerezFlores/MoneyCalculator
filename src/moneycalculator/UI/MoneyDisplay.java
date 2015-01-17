@@ -13,4 +13,7 @@ public class MoneyDisplay {
     public Money getMoney() {
         return money;
     }
+    
+    void execute() {    
+    }
 }
