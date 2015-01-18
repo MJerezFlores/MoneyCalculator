@@ -9,13 +9,11 @@ public class ExchangeRate {
     private final Currency from;
     private final Currency to;
     private final double value;
-    private final Date date;
 
-    public ExchangeRate(Currency from, Currency to, double value, Date date) {
+    public ExchangeRate(Currency from, Currency to, double value) {
         this.from = from;
         this.to= to;
         this.value = value;
-        this.date = date;
     }
 
     public Currency getIn() {
@@ -30,9 +28,5 @@ public class ExchangeRate {
         return value;
     }
 
-    public Date getDate() {
-        return date;
-    }
-    
     
 }
