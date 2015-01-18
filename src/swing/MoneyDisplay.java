@@ -2,18 +2,19 @@
 package swing;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import moneycalculator.model.Money;
 
-public class MoneyDisplay extends JLabel{
+
+public class MoneyDisplay extends JLabel implements moneycalculator.UI.MoneyDisplay{
 
     public MoneyDisplay() {
         super();
     }
     
-    public void showMoney(Money moneyIn, Money moneyOut){
-        super.setText("Conversion --> "+ String.valueOf(moneyIn.getAmount())+" "
-                +moneyIn.getCurrency().getCode()+ " = "+ String.valueOf(moneyOut.getAmount())+
-                " "+moneyOut.getCurrency().getCode());
-    } 
+    @Override
+    public void display(Money money) {
+        JOptionPane.showMessageDialog(null,money.getAmount() + " "+ money.getCurrency());
+    }
     
 }

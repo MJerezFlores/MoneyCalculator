@@ -1,19 +1,12 @@
+
 package moneycalculator.UI;
 
 import moneycalculator.model.Money;
 
-public class MoneyDisplay {
 
-    private final Money money;
+public interface MoneyDisplay {
 
-    public MoneyDisplay(Money money) {
-        this.money = money;
-    }
+    public void display(Money money);
 
-    public Money getMoney() {
-        return money;
-    }
-    
-    void execute() {    
-    }
 }
+

@@ -3,13 +3,13 @@ package moneycalculator.model;
 
 public class Currency {
     private final String name;
-    private final String Symbol;
-    private final String Code;
+    private final String symbol;
+    private final String code;
 
     public Currency(String name, String Symbol, String Code) {
         this.name = name;
-        this.Symbol = Symbol;
-        this.Code = Code;
+        this.symbol = Symbol;
+        this.code = Code;
     }
 
     public String getName() {
@@ -17,10 +17,17 @@ public class Currency {
     }
 
     public String getSymbol() {
-        return Symbol;
+        return symbol;
     }
 
     public String getCode() {
-        return Code;
+        return code;
     }
+
+    @Override
+    public String toString() {
+        return code;
+    }
+    
+    
 }

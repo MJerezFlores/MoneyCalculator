@@ -5,6 +5,8 @@ import moneycalculator.UI.MoneyDisplay;
 import moneycalculator.model.Exchange;
 import moneycalculator.model.ExchangeRate;
 import moneycalculator.model.Money;
+import moneycalculator.persistence.ExchangeRateLoader;
+import moneycalculator.persistence.mock.MockExchangeRateLoader;
 import moneycalculator.process.Exchanger;
 
 
@@ -20,11 +22,12 @@ public class ExchangeOperation {
         this.exchangeDialog = exchangeDialog;
     }
     
-    void execute(){
+    public void execute(){
         Exchange exchange = exchangeDialog.getExchange();
-        //ExchangeRateLoader exchangeRateLoader 
-        //ExchangeRate exchangeRate = exchangeRateLoader.load(exchange.getCurrency(), exchange.getMoney().getCurrency());
+        ExchangeRateLoader exchangeRateLoader = new MockExchangeRateLoader();
+        ExchangeRate exchangeRate = exchangeRateLoader.load(exchange.getCurrency(), exchange.getMoney().getCurrency());
         Exchanger exchanger = new Exchanger();
-        //Money moneyChanged = exchanger.exchange(exchange.getMoney(), exchangeRate);
+        Money moneyChanged = exchanger.exchange(exchange.getMoney(), exchangeRate);
+        moneyDisplay.display(moneyChanged);
     }
 }

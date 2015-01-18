@@ -6,8 +6,8 @@ import moneycalculator.model.Money;
 
 public class Exchanger {
 
-    private Money exchange( Money money, ExchangeRate exchangeRate){
-        Money moneyExchange = new Money(money.getAmount()*exchangeRate.getValue(), exchangeRate.getIn());
+    public Money exchange( Money money, ExchangeRate exchangeRate){
+        Money moneyExchange = new Money(money.getAmount()*exchangeRate.getValue(), exchangeRate.getFrom());
         return moneyExchange;
     }
     

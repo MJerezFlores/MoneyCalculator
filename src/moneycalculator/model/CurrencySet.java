@@ -1,38 +1,23 @@
 package moneycalculator.model;
 
+import java.util.List;
 import java.util.ArrayList;
-import java.util.HashSet;
 
-public class CurrencySet extends HashSet<Currency>{
+public class CurrencySet {
+
+    private final List<Currency> currencyList = new ArrayList<>();
     
-    private static CurrencySet instance = null;
-
-    public CurrencySet() {
-        super();
+    public boolean add(Currency currency){
+        return currencyList.add(currency);
+    }
+    
+    public Currency get(int index){
+        return currencyList.get(index);
+    }
+    
+    public Currency[] toArray(){
+        return currencyList.toArray(new Currency[currencyList.size()]);
     }
   
-    public CurrencySet getInstance() {
-        if (instance == null) instance = new CurrencySet();   
-        return instance;
-    }
     
-    public Currency getCurrency (String code){
-        for (Currency currency : this)
-            if (code.equals(currency.getCode())) return currency;
-        return null;   
-    }  
-    
-    public Currency[] search(String token){
-        ArrayList<Currency> list = new ArrayList<>();
-        for (Currency currency : list) {
-            if(currency.getCode().equalsIgnoreCase(token)){
-                list.add(currency);
-            }else if(currency.getSymbol().equalsIgnoreCase(token)){
-                list.add(currency);
-            }else if(currency.getName().equalsIgnoreCase(token)){
-                list.add(currency);
-            }    
-        }
-        return list.toArray(new Currency[0]);
-    }
 }
