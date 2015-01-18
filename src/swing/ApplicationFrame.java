@@ -16,7 +16,7 @@ public class ApplicationFrame extends JFrame{
     private ExchangeDialogPanel dialogPanel;
     final Currency[] currencies;
     ActionListener actionListener;
-    private DialogPanel dPanel;
+    private DialogPanel panel;
     private ExchangeDialog exchangeDialog;
 
     public ApplicationFrame(Currency[] currencies) {
@@ -70,13 +70,17 @@ public class ApplicationFrame extends JFrame{
 
     private Component createTextDialog() {
         DialogPanel panel = new DialogPanel();
-        this.dPanel = panel;
+        this.panel = panel;
         return panel;
     }
 
     private Component createExchangeDialog() {
         ExchangeDialogPanel panel = new ExchangeDialogPanel(currencies);
         this.exchangeDialog = panel;
+        return panel;
+    }
+
+    public DialogPanel getPanel() {
         return panel;
     }
     

@@ -1,4 +1,3 @@
-
 package moneycalculator.persistence;
 
 import moneycalculator.model.Currency;

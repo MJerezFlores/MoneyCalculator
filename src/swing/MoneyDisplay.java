@@ -6,15 +6,21 @@ import javax.swing.JOptionPane;
 import moneycalculator.model.Money;
 
 
-public class MoneyDisplay extends JLabel implements moneycalculator.UI.MoneyDisplay{
+public class MoneyDisplay implements moneycalculator.UI.MoneyDisplay{
 
-    public MoneyDisplay() {
-        super();
+    private final ApplicationFrame applicationFrame;
+
+    public MoneyDisplay(ApplicationFrame applicationFrame) {
+        this.applicationFrame = applicationFrame;
     }
-    
+
     @Override
     public void display(Money money) {
-        JOptionPane.showMessageDialog(null,money.getAmount() + " "+ money.getCurrency());
+        applicationFrame.getPanel().getTextArea().setText("Calculated : "+(money.getAmount()+" "+money.getCurrency()));
     }
+ 
+    
+    
+  
     
 }
