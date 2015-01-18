@@ -1,6 +1,4 @@
-
 package moneycalculator.model;
-
 
 public class Money {
 

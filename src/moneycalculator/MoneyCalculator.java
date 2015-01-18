@@ -20,8 +20,8 @@ public class MoneyCalculator {
             public void actionPerformed(ActionEvent ae) {
                 Currency from = applicationFrame.getExchangeDialog().getExchange().getMoney().getCurrency();
                 Currency to = applicationFrame.getExchangeDialog().getExchange().getCurrency();
-                new ExchangeOperation(new MoneyDisplay(applicationFrame),
-                        applicationFrame.getExchangeDialog(), 
+                new ExchangeOperation(applicationFrame.getExchangeDialog(),
+                        new MoneyDisplay(applicationFrame),
                         new ExchangeRateLoader().load(from,to)).execute();
             }
             

@@ -8,34 +8,35 @@ import java.util.logging.Logger;
 import moneycalculator.model.Currency;
 import moneycalculator.model.ExchangeRate;
 
-public class ExchangeRateLoader implements moneycalculator.persistence.ExchangeRateLoader{
+public class ExchangeRateLoader implements moneycalculator.persistence.ExchangeRateLoader {
+
     private FileReader reader;
     private String line = "";
     private String[] aux = new String[2];
-    private double inRate;
-    private double outRate;
-    
+    private double fromRate;
+    private double toRate;
+
     @Override
     public ExchangeRate load(Currency from, Currency to) {
         try {
-            reader = new FileReader("");
+            reader = new FileReader("C:\\Users\\Maca\\Documents\\rate.csv");
             BufferedReader br = new BufferedReader(reader);
             line = br.readLine();
-            while(line != null){
+            while (line != null) {
                 aux = line.split(";");
-                
-                if(aux[0].equals(from.getName())){
-                    inRate = Double.parseDouble(aux[1]);
+
+                if (aux[0].equals(from.getName())) {
+                    fromRate = Double.parseDouble(aux[1]);
                 }
-                if(aux[0].equals(to.getName())){
-                    outRate = Double.parseDouble(aux[1]);
+                if (aux[0].equals(to.getName())) {
+                    toRate = Double.parseDouble(aux[1]);
                 }
                 line = br.readLine();
             }
-            
+
         } catch (IOException ex) {
             Logger.getLogger(ExchangeRateLoader.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return new ExchangeRate(from, to, inRate/outRate);
-    }   
+        return new ExchangeRate(from, to, fromRate / toRate);
+    }
 }

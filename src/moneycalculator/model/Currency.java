@@ -1,15 +1,15 @@
-
 package moneycalculator.model;
 
 public class Currency {
+
     private final String name;
     private final String symbol;
     private final String code;
 
-    public Currency(String name, String Symbol, String Code) {
+    public Currency(String name, String code, String symbol) {
         this.name = name;
-        this.symbol = Symbol;
-        this.code = Code;
+        this.symbol = symbol;
+        this.code = code;
     }
 
     public String getName() {
@@ -28,6 +28,5 @@ public class Currency {
     public String toString() {
         return code;
     }
-    
-    
+
 }

@@ -1,4 +1,3 @@
-
 package swing;
 
 import java.awt.Component;
@@ -12,8 +11,7 @@ import moneycalculator.model.Currency;
 import moneycalculator.model.Exchange;
 import moneycalculator.model.Money;
 
-
-public class ExchangeDialogPanel extends JPanel implements ExchangeDialog{
+public class ExchangeDialogPanel extends JPanel implements ExchangeDialog {
 
     private JTextField amount;
     private JComboBox<Currency> currencyFrom;
@@ -23,7 +21,7 @@ public class ExchangeDialogPanel extends JPanel implements ExchangeDialog{
     public ExchangeDialogPanel(Currency[] currencies) {
         this.currencies = currencies;
         setLayout(new FlowLayout());
-        createWidgets();   
+        createWidgets();
     }
 
     private void createWidgets() {
@@ -49,18 +47,18 @@ public class ExchangeDialogPanel extends JPanel implements ExchangeDialog{
 
     @Override
     public Exchange getExchange() {
-        return new Exchange(getMoney(),getCurrency(currencyTo));
+        return new Exchange(getMoney(), getCurrency(currencyTo));
     }
 
-    private Money getMoney(){
+    private Money getMoney() {
         return new Money(getAmount(), getCurrency(currencyFrom));
-    }    
-    
-    private Currency getCurrency(JComboBox<Currency> comboBox){
+    }
+
+    private Currency getCurrency(JComboBox<Currency> comboBox) {
         return comboBox.getItemAt(comboBox.getSelectedIndex());
     }
-    
-    private double getAmount(){
+
+    private double getAmount() {
         return Double.parseDouble(amount.getText());
     }
 }

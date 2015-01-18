@@ -1,7 +1,4 @@
-
 package moneycalculator.model;
-
-
 
 public class ExchangeRate {
 
@@ -9,9 +6,9 @@ public class ExchangeRate {
     private final Currency to;
     private final double value;
 
-    public ExchangeRate(Currency to, Currency from, double value) {
+    public ExchangeRate(Currency from, Currency to, double value) {
         this.from = from;
-        this.to= to;
+        this.to = to;
         this.value = value;
     }
 
@@ -27,5 +24,4 @@ public class ExchangeRate {
         return value;
     }
 
-    
 }

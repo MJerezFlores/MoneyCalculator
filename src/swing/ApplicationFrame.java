@@ -1,4 +1,3 @@
-
 package swing;
 
 import java.awt.BorderLayout;
@@ -11,7 +10,7 @@ import javax.swing.JFrame;
 import moneycalculator.UI.ExchangeDialog;
 import moneycalculator.model.Currency;
 
-public class ApplicationFrame extends JFrame{
+public class ApplicationFrame extends JFrame {
 
     private ExchangeDialogPanel dialogPanel;
     final Currency[] currencies;
@@ -22,7 +21,7 @@ public class ApplicationFrame extends JFrame{
     public ApplicationFrame(Currency[] currencies) {
         this.currencies = currencies;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(500, 300));
+        setMinimumSize(new Dimension(300, 150));
         setTitle("Money Calculator");
         createWidgets();
         setVisible(true);
@@ -35,22 +34,21 @@ public class ApplicationFrame extends JFrame{
         add(createTextDialog(), BorderLayout.CENTER);
     }
 
-
     private JButton createCalculateButton() {
-        JButton button = new JButton ("Calculate");
-        button.addActionListener(new ActionListener(){  
+        JButton button = new JButton("Calculate");
+        button.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
                 actionListener.actionPerformed(ae);
             }
         });
-        return button;    
+        return button;
     }
 
     private JButton createCloseButton() {
-        JButton button = new JButton ("Close");
-        button.addActionListener(new ActionListener(){  
+        JButton button = new JButton("Close");
+        button.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -83,5 +81,5 @@ public class ApplicationFrame extends JFrame{
     public DialogPanel getPanel() {
         return panel;
     }
-    
+
 }

@@ -1,14 +1,12 @@
-
 package swing;
 
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
 import moneycalculator.model.Money;
 
-
-public class MoneyDisplay implements moneycalculator.UI.MoneyDisplay{
+public class MoneyDisplay implements moneycalculator.UI.MoneyDisplay {
 
     private final ApplicationFrame applicationFrame;
+    private final DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
     public MoneyDisplay(ApplicationFrame applicationFrame) {
         this.applicationFrame = applicationFrame;
@@ -16,11 +14,8 @@ public class MoneyDisplay implements moneycalculator.UI.MoneyDisplay{
 
     @Override
     public void display(Money money) {
-        applicationFrame.getPanel().getTextArea().setText("Calculated : "+(money.getAmount()+" "+money.getCurrency()));
+        applicationFrame.getPanel().getTextArea().setText("Calculated : " + 
+                decimalFormat.format(money.getAmount()) + " " + money.getCurrency().getSymbol());
     }
- 
-    
-    
-  
-    
+
 }

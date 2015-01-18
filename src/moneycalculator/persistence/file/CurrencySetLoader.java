@@ -1,4 +1,3 @@
-
 package moneycalculator.persistence.file;
 
 import java.io.FileNotFoundException;
@@ -9,33 +8,33 @@ import java.util.logging.Logger;
 import moneycalculator.model.Currency;
 import moneycalculator.model.CurrencySet;
 
-public class CurrencySetLoader implements moneycalculator.persistence.CurrencySetLoader{
+public class CurrencySetLoader implements moneycalculator.persistence.CurrencySetLoader {
 
     @Override
     public CurrencySet load() {
         CurrencySet set = new CurrencySet();
         String[] currency = new String[3];
-        String aux = ""; 
+        String aux = "";
         int pos = 0;
         try {
-            FileReader file = new FileReader("");
+            FileReader file = new FileReader("C:\\Users\\Maca\\Documents\\divisas.csv");
             int value = file.read();
-            while(value != -1){
-                if(((char)value) == ';' || ((char)value) == '\n'){
+            while (value != -1) {
+                if (((char) value) == ';' || ((char) value) == '\n') {
                     currency[pos] = aux;
                     pos++;
                     aux = "";
                     value = file.read();
                 }
-                
-                if (pos == 3){
-                    set.add(new Currency(currency[0],currency[1],currency[2]));
+
+                if (pos == 3) {
+                    set.add(new Currency(currency[0], currency[1], currency[2]));
                     pos = 0;
                 }
-                
-                aux += ((char)value);
+
+                aux += ((char) value);
                 value = file.read();
-            
+
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(CurrencySetLoader.class.getName()).log(Level.SEVERE, null, ex);
@@ -45,4 +44,3 @@ public class CurrencySetLoader implements moneycalculator.persistence.CurrencySe
         return set;
     }
 }
-
