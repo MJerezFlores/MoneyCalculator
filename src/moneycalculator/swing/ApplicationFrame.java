@@ -1,4 +1,4 @@
-package swing;
+package moneycalculator.swing;
 
 import java.awt.BorderLayout;
 import java.awt.Component;

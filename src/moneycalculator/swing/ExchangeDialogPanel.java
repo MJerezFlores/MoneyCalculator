@@ -1,4 +1,4 @@
-package swing;
+package moneycalculator.swing;
 
 import java.awt.Component;
 import java.awt.FlowLayout;

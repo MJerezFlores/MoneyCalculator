@@ -1,4 +1,4 @@
-package swing;
+package moneycalculator.swing;
 
 import java.text.DecimalFormat;
 import moneycalculator.model.Money;

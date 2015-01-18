@@ -1,4 +1,4 @@
-package swing;
+package moneycalculator.swing;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;

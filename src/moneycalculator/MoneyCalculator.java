@@ -7,8 +7,8 @@ import moneycalculator.model.Currency;
 import moneycalculator.model.CurrencySet;
 import moneycalculator.persistence.file.CurrencySetLoader;
 import moneycalculator.persistence.file.ExchangeRateLoader;
-import swing.ApplicationFrame;
-import swing.MoneyDisplay;
+import moneycalculator.swing.ApplicationFrame;
+import moneycalculator.swing.MoneyDisplay;
 
 public class MoneyCalculator {
 
